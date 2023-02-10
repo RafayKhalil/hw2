@@ -25,9 +25,7 @@ def load(file_path, out_file):
             ds = LinkedList()
         for op in operations:
             op = op.strip().split()
-            if op[0] == "insert":
-                ds.insert(int(op[1]), int(op[2]))
-            elif op[0] == "delete":
+            if op[0] == "delete":
                 ds.delete(int(op[1]))
             elif op[0] == "get":
                 out.append(ds.get(int(op[1])))
@@ -35,9 +33,9 @@ def load(file_path, out_file):
                 out.append(ds.size())
             elif op[0] == "display":
                 out.append(ds.display())
+            if op[0] == "insert":
+                ds.insert(int(op[1]), int(op[2]))
+            
         with open(out_file, 'w') as f:
             for item in out:
                 f.write("%s\n" % item)
-# load("../data/input.txt","tmp-out.txt")
-# load("../data/input1.txt","tmp-out1.txt")
-# load("../data/input3.txt","tmp-out2.txt")

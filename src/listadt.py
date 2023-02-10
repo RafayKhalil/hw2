@@ -33,7 +33,7 @@ def load(file_path, out_file):
                 out.append(ds.size())
             elif op[0] == "display":
                 out.append(ds.display())
-            if op[0] == "insert":
+            elif op[0] == "insert":
                 ds.insert(int(op[1]), int(op[2]))
             
         with open(out_file, 'w') as f:
